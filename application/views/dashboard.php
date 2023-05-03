@@ -103,13 +103,13 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
+                            <form class="form-header" action="/records" method="GET">
                                 <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -178,14 +178,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($records as $record) { ?>
-                                            <tr>
-                                                <td><?php echo $record['name']; ?></td>
-                                                <td><?php echo $record['amount']; ?></td>
-                                                <td><?php echo $record['date']; ?></td>
-                                                <td><?php echo $record['notes']; ?></td>
-                                                <td><a href="<?php echo $record['attachment']; ?>"><?php echo $record['attachment']; ?></a></td>
-                                            </tr>
+                                            <?php foreach ($records as $record) { ?>
+                                                <tr>
+                                                    <td><?php echo $record['name']; ?></td>
+                                                    <td><?php echo $record['amount']; ?></td>
+                                                    <td><?php echo $record['date']; ?></td>
+                                                    <td><?php echo $record['notes']; ?></td>
+                                                    <td><a href="<?php echo $record['attachment']; ?>"><?php echo $record['attachment']; ?></a></td>
+                                                </tr>
                                             <?php } ?>
                                         </tbody>
                                     </table>
@@ -198,11 +198,11 @@
                                         <div class="table-responsive">
                                             <table class="table table-top-countries">
                                                 <tbody>
-                                                    <?php foreach($incomes as $income) { ?>
-                                                    <tr>
-                                                        <td><?php echo $income["name"]; ?></td>
-                                                        <td class="text-right">Rp <?php echo $income["amount"]; ?></td>
-                                                    </tr>
+                                                    <?php foreach ($incomes as $income) { ?>
+                                                        <tr>
+                                                            <td><?php echo $income["name"]; ?></td>
+                                                            <td class="text-right">Rp <?php echo $income["amount"]; ?></td>
+                                                        </tr>
                                                     <?php } ?>
                                                 </tbody>
                                             </table>

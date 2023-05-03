@@ -1,21 +1,30 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Records extends CI_Controller {
+class Records extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
 
         $this->load->helper('url');
         $this->load->model('record_model');
     }
 
-    public function index() {
-        $data['records'] = $this->record_model->getAllRecords();
+    public function index()
+    {
+        $search = $this->input->get('search');
+        if ($search) {
+            $data['records'] = $this->record_model->getSearchRecords($search);
+        } else {
+            $data['records'] = $this->record_model->getAllRecords();
+        }
         $this->load->view('my_records', $data);
     }
 
-    public function add() {
+    public function add()
+    {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
@@ -31,7 +40,8 @@ class Records extends CI_Controller {
         }
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
@@ -39,12 +49,14 @@ class Records extends CI_Controller {
         $this->load->view('edit_records', $data);
     }
 
-    public function insertrecord() {
+    public function insertrecord()
+    {
         $this->record_model->insertRecord();
         redirect('records');
     }
 
-    public function editrecord($id) {
+    public function editrecord($id)
+    {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('amount', 'Amount', 'required');
@@ -60,7 +72,8 @@ class Records extends CI_Controller {
         }
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->record_model->deleteRecord($id);
         redirect('records');
     }
