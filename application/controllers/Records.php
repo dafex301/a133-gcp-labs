@@ -11,7 +11,12 @@ class Records extends CI_Controller {
     }
 
     public function index() {
-        $data['records'] = $this->record_model->getAllRecords();
+        $search = $this->input->get('search');
+        if ($search) {
+            $data['records'] = $this->record_model->getSearchRecords($search);
+        } else {
+            $data['records'] = $this->record_model->getAllRecords();
+        }
         $this->load->view('my_records', $data);
     }
 
