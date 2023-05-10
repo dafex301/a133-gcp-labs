@@ -109,7 +109,7 @@
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -178,14 +178,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($records as $record) { ?>
-                                            <tr>
-                                                <td><?php echo $record['name']; ?></td>
-                                                <td><?php echo $record['amount']; ?></td>
-                                                <td><?php echo $record['date']; ?></td>
-                                                <td><?php echo $record['notes']; ?></td>
-                                                <td><a href="<?php echo $record['attachment']; ?>"><?php echo $record['attachment']; ?></a></td>
-                                            </tr>
+                                            <?php foreach ($records as $record) { ?>
+                                                <tr>
+                                                    <td><?php echo $record['name']; ?></td>
+                                                    <td><?php echo $record['amount']; ?></td>
+                                                    <td><?php echo $record['date']; ?></td>
+                                                    <td><?php echo $record['notes']; ?></td>
+                                                    <td><a href="<?php echo $record['attachment']; ?>"><?php echo $record['attachment']; ?></a></td>
+                                                </tr>
                                             <?php } ?>
                                         </tbody>
                                     </table>
@@ -198,11 +198,11 @@
                                         <div class="table-responsive">
                                             <table class="table table-top-countries">
                                                 <tbody>
-                                                    <?php foreach($incomes as $income) { ?>
-                                                    <tr>
-                                                        <td><?php echo $income["name"]; ?></td>
-                                                        <td class="text-right">Rp <?php echo $income["amount"]; ?></td>
-                                                    </tr>
+                                                    <?php foreach ($incomes as $income) { ?>
+                                                        <tr>
+                                                            <td><?php echo $income["name"]; ?></td>
+                                                            <td class="text-right">Rp <?php echo $income["amount"]; ?></td>
+                                                        </tr>
                                                     <?php } ?>
                                                 </tbody>
                                             </table>
